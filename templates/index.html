@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		input{
+			height: 30px;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<center>
+		<h2>derdini sikeyim butonu</h2>
+		<hr>
+		<form action="/ekle" method="post">
+			<input type="number" name="entryNo" placeholder="entry no girin" required="Lutfen entry no girin">
+			<br>
+			<input type="submit" value="derdini sikeyim">
+		</form>
+
+
+		<br><br>
+		<div id="output">
+			{% for data in icerik %}
+				<li><a target='_blank' href='https://eksisozluk.com/entry/{{ data[1] }}'>#{{ data[1] }}<a> no'lu entrynin {{ data[2] }} kişi tarafından derdi sikilmiştir.. ip: {{ data[3] }}</li>
+			{% endfor %}
+		</div>
+	</center>
+</body>
+</html>
